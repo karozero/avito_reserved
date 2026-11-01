@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Avito - отметка брони",
+  "version": "1.0.9",
+  "description": "Выделяет забронированные объявления на Avito.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://avito.ru/*",
+        "https://*.avito.ru/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
+

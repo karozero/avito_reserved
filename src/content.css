@@ -1,0 +1,55 @@
+/* A dedicated attribute survives React replacing the card's className on hover. */
+[data-arm-reserved] {
+  position: relative !important;
+  isolation: isolate;
+
+  --arm-photo-radius: 16px;
+  border-radius: var(--arm-photo-radius);
+}
+[data-arm-reserved] .arm-badge {
+  position: relative !important;
+  z-index: 2147483647 !important;
+  flex-shrink: 0;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: fit-content;
+  margin: 6px 0;
+  padding: 5px 9px;
+  background: #fff0cc;
+  color: #733c00;
+  border: 1px solid #ed8b00;
+  border-radius: 6px;
+  font: 700 13px/1.4 Arial,sans-serif;
+  pointer-events: none;
+}
+
+[data-arm-reserved] > .arm-frame {
+  display: block !important;
+  position: absolute !important;
+  --arm-frame-padding: 8px;
+  inset: calc(0px - var(--arm-frame-padding)) !important;
+  z-index: 2147483647 !important;
+  box-sizing: border-box !important;
+  border: 2px solid #ed8b00 !important;
+  border-radius: calc(var(--arm-photo-radius) + var(--arm-frame-padding)) !important;
+  background: transparent !important;
+  pointer-events: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Match Avito's hover background around the desktop list content. */
+[data-arm-reserved][class*="list-"][class*="ivaItemRedesign-"] > .arm-frame {
+  --arm-frame-padding: 16px;
+  border-radius: calc(var(--arm-photo-radius) + var(--arm-frame-padding)) !important;
+}
+[data-arm-reserved][class*="list-"]:not([class*="ivaItemRedesign-"]) > .arm-frame {
+  --arm-frame-padding: 20px;
+}
+
+
+
